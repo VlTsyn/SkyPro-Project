@@ -1,4 +1,7 @@
-def filter_by_state(transactions_list: list, state: str = "EXECUTED") -> list:
+from typing import Any
+
+
+def filter_by_state(transactions_list: list[dict[str, Any]], state: str = "EXECUTED") -> list:
     """Функция для отслеживания статуса"""
     state_filter = []
     for item in transactions_list:
@@ -7,6 +10,6 @@ def filter_by_state(transactions_list: list, state: str = "EXECUTED") -> list:
     return state_filter
 
 
-def sort_by_date(transactions_list: list, desc: bool = True) -> list:
+def sort_by_date(transactions_list: list[dict[str, Any]], desc: bool = True) -> list:
     """Функция для сортировки по дате"""
     return sorted(transactions_list, key=lambda item: item["date"], reverse=desc)
