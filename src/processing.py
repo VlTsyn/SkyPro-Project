@@ -1,4 +1,5 @@
 def filter_by_state(transactions_list: list, state: str = "EXECUTED") -> list:
+    """Функция для отслеживания статуса"""
     state_filter = []
     for item in transactions_list:
         if item["state"] == state:
@@ -7,4 +8,5 @@ def filter_by_state(transactions_list: list, state: str = "EXECUTED") -> list:
 
 
 def sort_by_date(transactions_list: list, desc: bool = True) -> list:
+    """Функция для сортировки по дате"""
     return sorted(transactions_list, key=lambda item: item["date"], reverse=desc)
